@@ -51,7 +51,25 @@ body{
         background-color: rgb(181, 105, 252);
     }
     .block-3{
-        background-color: cornflowerblue;
+        background-color: rgb(96, 144, 233);
+    }
+    .block-4{
+        background-color: rgb(131, 223, 128);
+    }
+    .block-5{
+        background-color: rgb(105, 252, 142);
+    }
+    .block-6{
+        background-color: rgb(190, 238, 113);
+    }
+    .block-7{
+        background-color: rgb(238, 202, 105);
+    }
+    .block-8{
+        background-color: rgb(228, 125, 118);
+    }
+    .block-9{
+        background-color: rgb(233, 127, 85);
     }
     .selector{
         text-align: center;
