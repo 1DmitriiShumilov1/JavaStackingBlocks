@@ -28,6 +28,8 @@ function ready(){
     
 }
 
+// limit to the value //
+
 function valueChanged(event){
     var input = event.target
     if (input.value <= 0){
@@ -38,30 +40,12 @@ function valueChanged(event){
     }
 }
 
-
-function block1Picked(event){
-    var pickedBlock_1 = "lightblue"
-    var pickedAmount_1 = document.getElementsByClassName('js-selector-1')[0].value
-    alert('you picked the first block')
-    addBlock(pickedBlock_1, pickedAmount_1)
-}
-
-function block2Picked(event){
-    var pickedBlock_1 = "purple"
-    var pickedAmount_1 = document.getElementsByClassName('js-selector-2')[0].value
-    alert('you picked the second block')
-    addBlock(pickedBlock_1, pickedAmount_1)
-}
-
-function block3Picked(event){
-    var pickedBlock_1 = "darkblue"
-    var pickedAmount_1 = document.getElementsByClassName('js-selector-3')[0].value
-    alert('you picked the third block')
-    addBlock(pickedBlock_1, pickedAmount_1)
-}
+// main lists //
 
 var pickedBlocksList = []
 var pickedAmountList = []
+
+// adding blocks to the list //
 
 function addBlock(pickedBlock_1, pickedAmount_1){
     pickedBlocksList.push(pickedBlock_1)
@@ -79,10 +63,21 @@ function addBlock2(pickedBlock_2, pickedAmount_2){
     pickTheThirdBlock()
 }
 
+function addBlock3(pickedBlock_3, pickedAmount_3){
+    pickedBlocksList.push(pickedBlock_3)
+    pickedAmountList.push(parseInt(pickedAmount_3))
+    console.log(pickedBlocksList, pickedAmountList)
+    removeBlocks()
+}
+
+// remove all blocks from the screen //
+
 function removeBlocks(){
     var firstBlocks = document.getElementsByClassName('first-blocks')[0]
     firstBlocks.parentElement.remove()
 }
+
+// picking the second and the third blocks //
 
 function pickTheSecondBlock() {
     var gradient = "linear-gradient(to right, #DCE35B, #45B649)"
@@ -176,46 +171,67 @@ function pickTheThirdBlock() {
     document.getElementsByClassName('js-button-9')[0].addEventListener('click', block9Picked)    
 }
 
+// button "pick" is pressed //
 
+function block1Picked(){
+    var pickedBlock_1 = "lightblue"
+    var pickedAmount_1 = document.getElementsByClassName('js-selector-1')[0].value
+    alert('you picked the first block')
+    addBlock(pickedBlock_1, pickedAmount_1)
+}
 
-function block4Picked(event){
+function block2Picked(){
+    var pickedBlock_1 = "purple"
+    var pickedAmount_1 = document.getElementsByClassName('js-selector-2')[0].value
+    alert('you picked the second block')
+    addBlock(pickedBlock_1, pickedAmount_1)
+}
+
+function block3Picked(){
+    var pickedBlock_1 = "darkblue"
+    var pickedAmount_1 = document.getElementsByClassName('js-selector-3')[0].value
+    alert('you picked the third block')
+    addBlock(pickedBlock_1, pickedAmount_1)
+}
+
+function block4Picked(){
     var pickedBlock_2 = "darkgreen"
     var pickedAmount_2 = document.getElementsByClassName('js-selector-1')[0].value
     alert('you picked the first block')
     addBlock2(pickedBlock_2, pickedAmount_2)
 }
 
-function block5Picked(event){
+function block5Picked(){
     var pickedBlock_2 = "brightgreen"
     var pickedAmount_2 = document.getElementsByClassName('js-selector-2')[0].value
     alert('you picked the second block')
     addBlock2(pickedBlock_2, pickedAmount_2)
 }
 
-function block6Picked(event){
+function block6Picked(){
     var pickedBlock_2 = "lime"
     var pickedAmount_2 = document.getElementsByClassName('js-selector-3')[0].value
     alert('you picked the third block')
     addBlock2(pickedBlock_2, pickedAmount_2)
 }
 
-function block7Picked(event){
-    var pickedBlock_3 = "darkgreen"
+function block7Picked(){
+    var pickedBlock_3 = "yellow"
     var pickedAmount_3 = document.getElementsByClassName('js-selector-1')[0].value
     alert('you picked the first block')
-    addBlock2(pickedBlock_3, pickedAmount_3)
+    addBlock3(pickedBlock_3, pickedAmount_3)
 }
 
-function block8Picked(event){
-    var pickedBlock_3 = "brightgreen"
+function block8Picked(){
+    var pickedBlock_3 = "salmon"
     var pickedAmount_3 = document.getElementsByClassName('js-selector-2')[0].value
     alert('you picked the second block')
-    addBlock2(pickedBlock_3, pickedAmount_3)
+    addBlock3(pickedBlock_3, pickedAmount_3)
 }
 
-function block9Picked(event){
-    var pickedBlock_3 = "lime"
+function block9Picked(){
+    var pickedBlock_3 = "orange"
     var pickedAmount_3 = document.getElementsByClassName('js-selector-3')[0].value
     alert('you picked the third block')
-    addBlock2(pickedBlock_3, pickedAmount_3)
+    addBlock3(pickedBlock_3, pickedAmount_3)
 }
