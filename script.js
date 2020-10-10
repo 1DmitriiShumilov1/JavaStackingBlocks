@@ -238,6 +238,7 @@ function block9Picked(){
 function stackTheBlocks(){
     var gradient = "linear-gradient(to right, #03001e, #7303c0, #fdeff9)"
     document.body.style.backgroundImage = gradient
+    document.body.style.minHeight = "1000px"
         var finalBlocksContainer = document.createElement('p')
         finalBlocksContainer.classList.add('first-blocks-text')
         var mainContainer = document.getElementsByClassName('main-section')[0]

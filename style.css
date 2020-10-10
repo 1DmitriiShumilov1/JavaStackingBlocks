@@ -82,6 +82,7 @@ body{
         .selector-number{
             width: 20%;
             margin: 0;
+            border: none;
         }
         .selector-button{
             width: 20%;
