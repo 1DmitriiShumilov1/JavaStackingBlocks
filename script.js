@@ -83,7 +83,7 @@ function pickTheSecondBlock() {
     blockSelector.classList.add('sub-section')
     var mainContainer = document.getElementsByClassName('main-section')[0]
     var newBlocks = `
-        <p class="first-blocks-text">Pick Your Second Block</p>
+        <p class="blocks-text">Pick Your Second Block</p>
         <div class="first-blocks">
             <span class="first-block-selector">
                 <div class="block block-4"></div>
@@ -129,7 +129,7 @@ function pickTheThirdBlock() {
     blockSelector.classList.add('sub-section')
     var mainContainer = document.getElementsByClassName('main-section')[0]
     var newBlocks = `
-        <p class="first-blocks-text">Pick Your Third Block</p>
+        <p class="blocks-text">Pick Your Third Block</p>
         <div class="first-blocks">
             <span class="first-block-selector">
                 <div class="block block-7"></div>
@@ -240,7 +240,7 @@ function stackTheBlocks(){
     document.body.style.backgroundImage = gradient
     document.body.style.minHeight = "1000px"
         var finalBlocksContainer = document.createElement('p')
-        finalBlocksContainer.classList.add('first-blocks-text')
+        finalBlocksContainer.classList.add('final-blocks-text')
         var mainContainer = document.getElementsByClassName('main-section')[0]
         var newBlocks = `This is your tower of blocks, thank you for playing!`
         finalBlocksContainer.innerHTML = newBlocks
