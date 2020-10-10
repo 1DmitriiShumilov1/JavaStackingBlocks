@@ -96,6 +96,7 @@ body{
             padding: 0;
             outline: none;
             border: 1px solid rgb(255, 255, 255);
+            background-color: #f0f0f0;
         }
             .selector-button:hover{
                 cursor: pointer;

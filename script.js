@@ -245,6 +245,7 @@ function stackTheBlocks(){
         var newBlocks = `This is your tower of blocks, thank you for playing!`
         finalBlocksContainer.innerHTML = newBlocks
         mainContainer.append(finalBlocksContainer)
+    console.log(pickedAmountList)
     stack1()
     stack2()
     stack3()
