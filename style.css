@@ -32,7 +32,11 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column-reverse;
 }
+    .main-section-vertical{
+        flex-direction: column;
+    }
 
 .sub-section{
     width: 50%;
@@ -43,33 +47,34 @@ body{
     margin: 20px;
     width: 200px;
     height: 200px;
+    box-shadow: 8px 10px 8px rgb(51, 51, 51);
 }
     .block-1{
-        background-color: rgb(161, 252, 252);
+        background-color: #a1fcfc;
     }
     .block-2{
-        background-color: rgb(181, 105, 252);
+        background-color: #b569fc;
     }
     .block-3{
-        background-color: rgb(96, 144, 233);
+        background-color: #6090e9;
     }
     .block-4{
-        background-color: rgb(131, 223, 128);
+        background-color: #83df80;
     }
     .block-5{
-        background-color: rgb(105, 252, 142);
+        background-color: #69fc8e;
     }
     .block-6{
-        background-color: rgb(190, 238, 113);
+        background-color: #beee71;
     }
     .block-7{
-        background-color: rgb(238, 202, 105);
+        background-color: #eeca69;
     }
     .block-8{
-        background-color: rgb(228, 125, 118);
+        background-color: #e47d76;
     }
     .block-9{
-        background-color: rgb(233, 127, 85);
+        background-color: #e97f55;
     }
     .selector{
         text-align: center;
@@ -94,4 +99,11 @@ body{
 
 .first-block-selector{
     margin: 20px;
+}
+
+.final-block-1, .final-block-2, .final-block-3{
+    width: 70px;
+    height: 70px;
+    margin: 2px;
+    box-shadow: 8px 0px 8px rgb(51, 51, 51);
 }

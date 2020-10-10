@@ -50,7 +50,6 @@ var pickedAmountList = []
 function addBlock(pickedBlock_1, pickedAmount_1){
     pickedBlocksList.push(pickedBlock_1)
     pickedAmountList.push(parseInt(pickedAmount_1))
-    console.log(pickedBlocksList, pickedAmountList)
     removeBlocks()
     pickTheSecondBlock()
 }
@@ -58,7 +57,6 @@ function addBlock(pickedBlock_1, pickedAmount_1){
 function addBlock2(pickedBlock_2, pickedAmount_2){
     pickedBlocksList.push(pickedBlock_2)
     pickedAmountList.push(parseInt(pickedAmount_2))
-    console.log(pickedBlocksList, pickedAmountList)
     removeBlocks()
     pickTheThirdBlock()
 }
@@ -66,15 +64,14 @@ function addBlock2(pickedBlock_2, pickedAmount_2){
 function addBlock3(pickedBlock_3, pickedAmount_3){
     pickedBlocksList.push(pickedBlock_3)
     pickedAmountList.push(parseInt(pickedAmount_3))
-    console.log(pickedBlocksList, pickedAmountList)
     removeBlocks()
+    stackTheBlocks()
 }
 
 // remove all blocks from the screen //
 
 function removeBlocks(){
-    var firstBlocks = document.getElementsByClassName('first-blocks')[0]
-    firstBlocks.parentElement.remove()
+    document.getElementsByClassName('first-blocks')[0].parentElement.remove()
 }
 
 // picking the second and the third blocks //
@@ -174,64 +171,188 @@ function pickTheThirdBlock() {
 // button "pick" is pressed //
 
 function block1Picked(){
-    var pickedBlock_1 = "lightblue"
+    var pickedBlock_1 = "#a1fcfc"
     var pickedAmount_1 = document.getElementsByClassName('js-selector-1')[0].value
     alert('you picked the first block')
     addBlock(pickedBlock_1, pickedAmount_1)
 }
 
 function block2Picked(){
-    var pickedBlock_1 = "purple"
+    var pickedBlock_1 = "#b569fc"
     var pickedAmount_1 = document.getElementsByClassName('js-selector-2')[0].value
     alert('you picked the second block')
     addBlock(pickedBlock_1, pickedAmount_1)
 }
 
 function block3Picked(){
-    var pickedBlock_1 = "darkblue"
+    var pickedBlock_1 = "#6090e9"
     var pickedAmount_1 = document.getElementsByClassName('js-selector-3')[0].value
     alert('you picked the third block')
     addBlock(pickedBlock_1, pickedAmount_1)
 }
 
 function block4Picked(){
-    var pickedBlock_2 = "darkgreen"
+    var pickedBlock_2 = "#83df80"
     var pickedAmount_2 = document.getElementsByClassName('js-selector-1')[0].value
     alert('you picked the first block')
     addBlock2(pickedBlock_2, pickedAmount_2)
 }
 
 function block5Picked(){
-    var pickedBlock_2 = "brightgreen"
+    var pickedBlock_2 = "#69fc8e"
     var pickedAmount_2 = document.getElementsByClassName('js-selector-2')[0].value
     alert('you picked the second block')
     addBlock2(pickedBlock_2, pickedAmount_2)
 }
 
 function block6Picked(){
-    var pickedBlock_2 = "lime"
+    var pickedBlock_2 = "#beee71"
     var pickedAmount_2 = document.getElementsByClassName('js-selector-3')[0].value
     alert('you picked the third block')
     addBlock2(pickedBlock_2, pickedAmount_2)
 }
 
 function block7Picked(){
-    var pickedBlock_3 = "yellow"
+    var pickedBlock_3 = "#eeca69"
     var pickedAmount_3 = document.getElementsByClassName('js-selector-1')[0].value
     alert('you picked the first block')
     addBlock3(pickedBlock_3, pickedAmount_3)
 }
 
 function block8Picked(){
-    var pickedBlock_3 = "salmon"
+    var pickedBlock_3 = "#e47d76"
     var pickedAmount_3 = document.getElementsByClassName('js-selector-2')[0].value
     alert('you picked the second block')
     addBlock3(pickedBlock_3, pickedAmount_3)
 }
 
 function block9Picked(){
-    var pickedBlock_3 = "orange"
+    var pickedBlock_3 = "#e97f55"
     var pickedAmount_3 = document.getElementsByClassName('js-selector-3')[0].value
     alert('you picked the third block')
     addBlock3(pickedBlock_3, pickedAmount_3)
+}
+
+// final function //
+
+function stackTheBlocks(){
+    var gradient = "linear-gradient(to right, #03001e, #7303c0, #fdeff9)"
+    document.body.style.backgroundImage = gradient
+        var finalBlocksContainer = document.createElement('p')
+        finalBlocksContainer.classList.add('first-blocks-text')
+        var mainContainer = document.getElementsByClassName('main-section')[0]
+        var newBlocks = `This is your tower of blocks, thank you for playing!`
+        finalBlocksContainer.innerHTML = newBlocks
+        mainContainer.append(finalBlocksContainer)
+    stack1()
+    stack2()
+    stack3()
+}
+
+function stack1(){
+    if (pickedAmountList[0] == 1){
+        var finalBlocksContainer = document.createElement('div')
+        finalBlocksContainer.classList.add('main-section-vertical')
+        var mainContainer = document.getElementsByClassName('main-section')[0]
+        var newBlocks = `
+            <div class="final-block-1"></div>`
+        finalBlocksContainer.innerHTML = newBlocks
+        mainContainer.append(finalBlocksContainer)
+    }
+    if (pickedAmountList[0] == 2){
+        var finalBlocksContainer = document.createElement('div')
+        finalBlocksContainer.classList.add('main-section-vertical')
+        var mainContainer = document.getElementsByClassName('main-section')[0]
+        var newBlocks = `
+            <div class="final-block-1"></div>
+            <div class="final-block-1"></div>`
+        finalBlocksContainer.innerHTML = newBlocks
+        mainContainer.append(finalBlocksContainer)
+    }
+    if (pickedAmountList[0] == 3){
+        var finalBlocksContainer = document.createElement('div')
+        finalBlocksContainer.classList.add('main-section-vertical')
+        var mainContainer = document.getElementsByClassName('main-section')[0]
+        var newBlocks = `
+            <div class="final-block-1"></div>
+            <div class="final-block-1"></div>
+            <div class="final-block-1"></div>`
+        finalBlocksContainer.innerHTML = newBlocks
+        mainContainer.append(finalBlocksContainer)
+    }
+    for (i = 0; i < document.getElementsByClassName('final-block-1').length; i++){
+        document.getElementsByClassName('final-block-1')[i].style.backgroundColor = pickedBlocksList[0]
+    }
+}
+
+function stack2(){
+    if (pickedAmountList[1] == 1){
+        var finalBlocksContainer = document.createElement('div')
+        finalBlocksContainer.classList.add('main-section-vertical')
+        var mainContainer = document.getElementsByClassName('main-section')[0]
+        var newBlocks = `
+            <div class="final-block-2"></div>`
+        finalBlocksContainer.innerHTML = newBlocks
+        mainContainer.append(finalBlocksContainer)
+    }
+    if (pickedAmountList[1] == 2){
+        var finalBlocksContainer = document.createElement('div')
+        finalBlocksContainer.classList.add('main-section-vertical')
+        var mainContainer = document.getElementsByClassName('main-section')[0]
+        var newBlocks = `
+            <div class="final-block-2"></div>
+            <div class="final-block-2"></div>`
+        finalBlocksContainer.innerHTML = newBlocks
+        mainContainer.append(finalBlocksContainer)
+    }
+    if (pickedAmountList[1] == 3){
+        var finalBlocksContainer = document.createElement('div')
+        finalBlocksContainer.classList.add('main-section-vertical')
+        var mainContainer = document.getElementsByClassName('main-section')[0]
+        var newBlocks = `
+            <div class="final-block-2"></div>
+            <div class="final-block-2"></div>
+            <div class="final-block-2"></div>`
+        finalBlocksContainer.innerHTML = newBlocks
+        mainContainer.append(finalBlocksContainer)
+    }
+    for (i = 0; i < document.getElementsByClassName('final-block-2').length; i++){
+        document.getElementsByClassName('final-block-2')[i].style.backgroundColor = pickedBlocksList[1]
+    }
+}
+
+function stack3(){
+    if (pickedAmountList[2] == 1){
+        var finalBlocksContainer = document.createElement('div')
+        finalBlocksContainer.classList.add('main-section-vertical')
+        var mainContainer = document.getElementsByClassName('main-section')[0]
+        var newBlocks = `
+            <div class="final-block-3"></div>`
+        finalBlocksContainer.innerHTML = newBlocks
+        mainContainer.append(finalBlocksContainer)
+    }
+    if (pickedAmountList[2] == 2){
+        var finalBlocksContainer = document.createElement('div')
+        finalBlocksContainer.classList.add('main-section-vertical')
+        var mainContainer = document.getElementsByClassName('main-section')[0]
+        var newBlocks = `
+            <div class="final-block-3"></div>
+            <div class="final-block-3"></div>`
+        finalBlocksContainer.innerHTML = newBlocks
+        mainContainer.append(finalBlocksContainer)
+    }
+    if (pickedAmountList[2] == 3){
+        var finalBlocksContainer = document.createElement('div')
+        finalBlocksContainer.classList.add('main-section-vertical')
+        var mainContainer = document.getElementsByClassName('main-section')[0]
+        var newBlocks = `
+            <div class="final-block-3"></div>
+            <div class="final-block-3"></div>
+            <div class="final-block-3"></div>`
+        finalBlocksContainer.innerHTML = newBlocks
+        mainContainer.append(finalBlocksContainer)
+    }
+    for (i = 0; i < document.getElementsByClassName('final-block-3').length; i++){
+        document.getElementsByClassName('final-block-3')[i].style.backgroundColor = pickedBlocksList[2]
+    }
 }
