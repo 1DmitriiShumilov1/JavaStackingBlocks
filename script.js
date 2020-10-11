@@ -245,116 +245,46 @@ function stackTheBlocks(){
         var newBlocks = `This is your tower of blocks, thank you for playing!`
         finalBlocksContainer.innerHTML = newBlocks
         mainContainer.append(finalBlocksContainer)
-    console.log(pickedAmountList)
-    stack1()
-    stack2()
-    stack3()
+    stack()
 }
 
-function stack1(){
-    if (pickedAmountList[0] == 1){
-        var finalBlocksContainer = document.createElement('div')
-        finalBlocksContainer.classList.add('main-section-vertical')
-        var mainContainer = document.getElementsByClassName('main-section')[0]
-        var newBlocks = `
-            <div class="final-block-1"></div>`
-        finalBlocksContainer.innerHTML = newBlocks
-        mainContainer.append(finalBlocksContainer)
+function stack(){
+    console.log(pickedAmountList, pickedBlocksList)
+    for (i = 0; i < pickedAmountList.length; i++){
+        if (pickedAmountList[i] == 1){
+            var finalBlocksContainer = document.createElement('div')
+            finalBlocksContainer.classList.add('main-section-vertical')
+            var mainContainer = document.getElementsByClassName('main-section')[0]
+            var newBlocks = `
+                <div class="final-block-${i + 1}"></div>`
+            finalBlocksContainer.innerHTML = newBlocks
+            mainContainer.append(finalBlocksContainer)
+        }
+        if (pickedAmountList[i] == 2){
+            var finalBlocksContainer = document.createElement('div')
+            finalBlocksContainer.classList.add('main-section-vertical')
+            var mainContainer = document.getElementsByClassName('main-section')[0]
+            var newBlocks = `
+                <div class="final-block-${i + 1}"></div>
+                <div class="final-block-${i + 1}"></div>`
+            finalBlocksContainer.innerHTML = newBlocks
+            mainContainer.append(finalBlocksContainer)
+        }
+        if (pickedAmountList[i] == 3){
+            var finalBlocksContainer = document.createElement('div')
+            finalBlocksContainer.classList.add('main-section-vertical')
+            var mainContainer = document.getElementsByClassName('main-section')[0]
+            var newBlocks = `
+                <div class="final-block-${i + 1}"></div>
+                <div class="final-block-${i + 1}"></div>
+                <div class="final-block-${i + 1}"></div>`
+            finalBlocksContainer.innerHTML = newBlocks
+            mainContainer.append(finalBlocksContainer)
+        }
     }
-    if (pickedAmountList[0] == 2){
-        var finalBlocksContainer = document.createElement('div')
-        finalBlocksContainer.classList.add('main-section-vertical')
-        var mainContainer = document.getElementsByClassName('main-section')[0]
-        var newBlocks = `
-            <div class="final-block-1"></div>
-            <div class="final-block-1"></div>`
-        finalBlocksContainer.innerHTML = newBlocks
-        mainContainer.append(finalBlocksContainer)
-    }
-    if (pickedAmountList[0] == 3){
-        var finalBlocksContainer = document.createElement('div')
-        finalBlocksContainer.classList.add('main-section-vertical')
-        var mainContainer = document.getElementsByClassName('main-section')[0]
-        var newBlocks = `
-            <div class="final-block-1"></div>
-            <div class="final-block-1"></div>
-            <div class="final-block-1"></div>`
-        finalBlocksContainer.innerHTML = newBlocks
-        mainContainer.append(finalBlocksContainer)
-    }
-    for (i = 0; i < document.getElementsByClassName('final-block-1').length; i++){
-        document.getElementsByClassName('final-block-1')[i].style.backgroundColor = pickedBlocksList[0]
-    }
-}
-
-function stack2(){
-    if (pickedAmountList[1] == 1){
-        var finalBlocksContainer = document.createElement('div')
-        finalBlocksContainer.classList.add('main-section-vertical')
-        var mainContainer = document.getElementsByClassName('main-section')[0]
-        var newBlocks = `
-            <div class="final-block-2"></div>`
-        finalBlocksContainer.innerHTML = newBlocks
-        mainContainer.append(finalBlocksContainer)
-    }
-    if (pickedAmountList[1] == 2){
-        var finalBlocksContainer = document.createElement('div')
-        finalBlocksContainer.classList.add('main-section-vertical')
-        var mainContainer = document.getElementsByClassName('main-section')[0]
-        var newBlocks = `
-            <div class="final-block-2"></div>
-            <div class="final-block-2"></div>`
-        finalBlocksContainer.innerHTML = newBlocks
-        mainContainer.append(finalBlocksContainer)
-    }
-    if (pickedAmountList[1] == 3){
-        var finalBlocksContainer = document.createElement('div')
-        finalBlocksContainer.classList.add('main-section-vertical')
-        var mainContainer = document.getElementsByClassName('main-section')[0]
-        var newBlocks = `
-            <div class="final-block-2"></div>
-            <div class="final-block-2"></div>
-            <div class="final-block-2"></div>`
-        finalBlocksContainer.innerHTML = newBlocks
-        mainContainer.append(finalBlocksContainer)
-    }
-    for (i = 0; i < document.getElementsByClassName('final-block-2').length; i++){
-        document.getElementsByClassName('final-block-2')[i].style.backgroundColor = pickedBlocksList[1]
-    }
-}
-
-function stack3(){
-    if (pickedAmountList[2] == 1){
-        var finalBlocksContainer = document.createElement('div')
-        finalBlocksContainer.classList.add('main-section-vertical')
-        var mainContainer = document.getElementsByClassName('main-section')[0]
-        var newBlocks = `
-            <div class="final-block-3"></div>`
-        finalBlocksContainer.innerHTML = newBlocks
-        mainContainer.append(finalBlocksContainer)
-    }
-    if (pickedAmountList[2] == 2){
-        var finalBlocksContainer = document.createElement('div')
-        finalBlocksContainer.classList.add('main-section-vertical')
-        var mainContainer = document.getElementsByClassName('main-section')[0]
-        var newBlocks = `
-            <div class="final-block-3"></div>
-            <div class="final-block-3"></div>`
-        finalBlocksContainer.innerHTML = newBlocks
-        mainContainer.append(finalBlocksContainer)
-    }
-    if (pickedAmountList[2] == 3){
-        var finalBlocksContainer = document.createElement('div')
-        finalBlocksContainer.classList.add('main-section-vertical')
-        var mainContainer = document.getElementsByClassName('main-section')[0]
-        var newBlocks = `
-            <div class="final-block-3"></div>
-            <div class="final-block-3"></div>
-            <div class="final-block-3"></div>`
-        finalBlocksContainer.innerHTML = newBlocks
-        mainContainer.append(finalBlocksContainer)
-    }
-    for (i = 0; i < document.getElementsByClassName('final-block-3').length; i++){
-        document.getElementsByClassName('final-block-3')[i].style.backgroundColor = pickedBlocksList[2]
+    for (i = 0; i < 3; i++){
+        for(x = 0; x < document.getElementsByClassName('final-block-' + (i+1)).length; x++){
+            document.getElementsByClassName('final-block-' + (i+1))[x].style.backgroundColor = pickedBlocksList[i]
+        }
     }
 }
